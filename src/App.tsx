@@ -1,9 +1,33 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import Navbar from "./Components/Navbar";
+import Footer from "./Components/Footer";
+import ErrorPage from "./Components/Pages/ErrorPage";
+
 export default function App() {
   return (
-    <div>
-      <h1>Github Project</h1>
-      <button className="btn">Heyyy</button>
-    </div>
+    <Router>
+      <div className="h-screen flex flex-col justify-between bg-black bg-dark-image bg-no-repeat bg-center bg-[length:600px_600px] contrast-200 saturate-150 object-right  brightness-100">
+        <Navbar />
+        <main>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <div className="container mx-auto font-Lustria text-white tracking-widest font-thin space-y-2 flex flex-col items-center justify-center mb-20">
+                  {" "}
+                  <p className="text-5xl ">GITHUB</p>
+                  <hr className="text-white w-36 opacity-50" />
+                  <p className="text-xs">FINDER</p>
+                </div>
+              }
+            />
+            <Route path="/notfound" element={<ErrorPage />} />
+            <Route path="/*" element={<ErrorPage />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
   );
 }
-
