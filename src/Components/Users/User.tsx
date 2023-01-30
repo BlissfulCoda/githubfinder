@@ -1,8 +1,9 @@
 import { useState } from "react";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
+import { UserInterface } from "../../Data/GithubContextData";
 
 type UserProps = {
-  user: object;
+  user: UserInterface;
 };
 
 export default function User({ user }: UserProps): JSX.Element {
@@ -11,11 +12,11 @@ export default function User({ user }: UserProps): JSX.Element {
   const { login, avatar_url } = user;
   return (
     <Link to={`/users/${login}`}>
-      <div className="clip-path-myPolygon hover:border-y-4 hover:border-indigo-500 duration-500 h-full w-56 drop-shadow-3xl relative">
+      <div className="clip-path-myPolygon hover:border-4 hover:border-indigo-500 h-full w-56 drop-shadow-3xl relative">
         <img
           src={avatar_url}
           alt="Profile"
-          className={`brightness-75 hover:brightness-125 object-center h-full w-full object-cover`}
+          className={`brightness-75 hover:brightness-100 object-center h-full w-full object-cover`}
           onMouseEnter={() => setHoverText(true)}
           onMouseLeave={() => setHoverText(false)}
         />

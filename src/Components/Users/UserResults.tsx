@@ -1,30 +1,18 @@
-import { useEffect, useState } from "react";
+import { useEffect, useContext } from "react";
 import Spinner from "../Spinner";
 import User from "./User";
 
+import GithubContext from "../../Context/Github/GithubData";
+import { GithubContextDataInterface } from "../../Data/GithubContextData";
+
 export default function UserResults(): JSX.Element {
-  const [users, setUsers] = useState([]);
-  const [loading, isLoading] = useState<boolean>(true);
+  const { loading, users, fetchUsers } = useContext(
+    GithubContext
+  ) as GithubContextDataInterface;
 
   useEffect(() => {
     fetchUsers();
   }, []);
-
-  const GITHUB_TOKEN = import.meta.env.VITE_REACT_APP_GITHUB_TOKEN;
-  const GITHUB_URL = import.meta.env.VITE_REACT_APP_GITHUB_URL;
-
-  const fetchUsers = async () => {
-    const response = await fetch(`${GITHUB_URL}/users`, {
-      method: "GET",
-      headers: {
-        Authorization: `token ${GITHUB_TOKEN}`,
-      },
-    });
-
-    const data = await response.json();
-    setUsers(data);
-    isLoading(false);
-  };
 
   if (!loading) {
     return (
