@@ -3,11 +3,12 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 import ErrorPage from "./Components/Pages/ErrorPage";
+import UserResults from "./Components/Users/UserResults";
 
 export default function App() {
   return (
     <Router>
-      <div className="h-screen flex flex-col justify-between bg-black bg-dark-image bg-no-repeat bg-center bg-[length:600px_600px] contrast-200 saturate-150 object-right  brightness-100">
+      <div className="h-screen flex flex-col justify-between bg-black bg-dark-image bg-no-repeat bg-center bg-[length:600px_600px] contrast-200 saturate-250 object-right  brightness-100 overflow-hidden">
         <Navbar />
         <main>
           <Routes>
@@ -18,7 +19,8 @@ export default function App() {
                   {" "}
                   <p className="text-5xl ">GITHUB</p>
                   <hr className="text-white w-36 opacity-50" />
-                  <p className="text-xs">FINDER</p>
+                  <p className="text-xs">FINDER!</p>
+                  <UserResults />
                 </div>
               }
             />

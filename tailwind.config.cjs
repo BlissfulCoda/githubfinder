@@ -3,6 +3,9 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      shadow: {
+        "3xl": "0px 0.491742px 10.8183px rgba(255, 255, 255, 0.15)",
+      },
       backgroundImage: (theme) => ({
         "dark-image": "url('/src/assets/Earth-2.gif')",
       }),
