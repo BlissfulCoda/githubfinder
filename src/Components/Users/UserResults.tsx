@@ -2,7 +2,7 @@ import { useEffect, useContext } from "react";
 import Spinner from "../Spinner";
 import User from "./User";
 
-import GithubContext from "../../Context/Github/GithubData";
+import GithubContext from "../../Context/Github/GithubContextData";
 import { GithubContextDataInterface } from "../../Data/GithubContextData";
 
 export default function UserResults(): JSX.Element {

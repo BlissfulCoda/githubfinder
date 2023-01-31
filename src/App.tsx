@@ -5,7 +5,7 @@ import Footer from "./Components/Footer";
 import ErrorPage from "./Components/Pages/ErrorPage";
 import UserResults from "./Components/Users/UserResults";
 
-import { GithubProvider } from "./Context/Github/GithubData";
+import { GithubProvider } from "./Context/Github/GithubContextData";
 
 export default function App() {
   return (
