@@ -3,13 +3,14 @@ export type UserInterface = {
 };
 
 type GithubState = {
-  users: UserInterface[],
-  loading: boolean
-}
+  users: UserInterface[];
+  loading: boolean;
+};
 
 export interface GithubContextDataInterface {
   loading: boolean;
   users: UserInterface[];
   fetchUsers: () => void;
   initialState: GithubState;
+  setLoading: () => void;
 }

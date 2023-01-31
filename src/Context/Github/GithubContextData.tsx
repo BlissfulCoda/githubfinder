@@ -1,7 +1,7 @@
 import { createContext, useReducer } from "react";
 import { GithubContextDataInterface } from "../../Data/GithubContextData";
 import githubReducer from "./GithubReducer";
-import {REDUCER_ACTION_TYPE} from './GithubReducer'
+import { REDUCER_ACTION_TYPE } from "./GithubReducer";
 
 const GithubContext = createContext<GithubContextDataInterface | null>(null);
 
@@ -13,17 +13,16 @@ interface GithubContextInterface {
 
 export const initialState = {
   users: [],
-  loading: true,
+  loading: false,
 };
-
 
 export const GithubProvider = ({
   children,
 }: GithubContextInterface): JSX.Element => {
-
   const [state, dispatch] = useReducer(githubReducer, initialState);
 
   const fetchUsers = async () => {
+    setLoading();
     const response = await fetch(`${GITHUB_URL}/users`, {
       method: "GET",
     });
@@ -36,6 +35,8 @@ export const GithubProvider = ({
     });
   };
 
+  const setLoading = () => dispatch({ type: REDUCER_ACTION_TYPE.SET_LOADING });
+
   return (
     <GithubContext.Provider
       value={{
@@ -43,6 +44,7 @@ export const GithubProvider = ({
         loading: state.loading,
         initialState,
         fetchUsers,
+        setLoading,
       }}
     >
       {children}

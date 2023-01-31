@@ -2,6 +2,7 @@ import { initialState } from "./GithubContextData";
 
 export const enum REDUCER_ACTION_TYPE {
   GET_USERS,
+  SET_LOADING,
 }
 
 type GithubReducerTypes = {
@@ -16,6 +17,8 @@ const githubReducer = (
   switch (action.type) {
     case REDUCER_ACTION_TYPE.GET_USERS:
       return { ...state, users: action.payload ?? [], loading: false };
+    case REDUCER_ACTION_TYPE.SET_LOADING:
+      return { ...state, loading: true };
     default:
       return state;
   }
