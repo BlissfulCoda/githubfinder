@@ -3,8 +3,8 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
-      dropShadow: {
-        "3xl": "0px 0.491742px 10.8183px rgba(255, 255, 255, 0.15)",
+      boxShadow: {
+        "3xl": "0px 0.614696px 13.5233px rgba(255, 255, 255, 0.25)",
       },
 
       backgroundImage: (theme) => ({

@@ -1,6 +1,6 @@
 import { FaBehance, FaSearch, FaGithub } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import UserSearch from "./Users/UserSearch";
+import UserSearch from "../Users/UserSearch";
 
 export default function Navbar(): JSX.Element {
   return (

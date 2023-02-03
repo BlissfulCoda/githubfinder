@@ -1,5 +1,5 @@
-import Navbar from "../Navbar";
-import Footer from "../Footer";
+import Navbar from "../Components/Layout/Navbar";
+import Footer from "../Components/Layout/Footer";
 
 export default function ErrorPage(): JSX.Element {
   return (
