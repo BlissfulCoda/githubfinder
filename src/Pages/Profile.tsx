@@ -34,7 +34,7 @@ export default function Profile(): JSX.Element {
     bio,
     location,
     hireable,
-    website
+    website,
   }: UserInterface = user;
 
   useEffect(() => {
@@ -45,12 +45,12 @@ export default function Profile(): JSX.Element {
   if (loading) return <Spinner />;
 
   return (
-    <section className="mx-9 mt-4 relative h-screen">
+    <section className="mx-9 mt-3 relative h-screen">
       <figure>
         <img
           src={avatar_url}
           alt={`image of ${userLogin}`}
-          className={`object-center h-[450px] w-full object-cover object-top  brightness-50 contrast-50`}
+          className={`object-center h-[445px] w-full object-cover object-top  brightness-75 contrast-50`}
         />
       </figure>
       <div className="w-full absolute top-2 right-0 h-full p-2 pt-5">
@@ -73,7 +73,7 @@ export default function Profile(): JSX.Element {
           </div>
         </nav>
 
-        <div className="flex text-white text-[7px] space-x-2 border-[0.1px] border-opacity-10 border-y-neutral-50 border-x-0 py-2 font-light w-48 text-right ml-auto pl-5">
+        <div className="flex text-white text-[7px] space-x-2 border-[0.1px] border-opacity-10 border-y-neutral-50 border-x-0 py-2 font-light w-52 text-right ml-auto pl-5">
           <h4>
             {followers} <span className="opacity-40">Followers</span>
           </h4>
@@ -86,9 +86,9 @@ export default function Profile(): JSX.Element {
         </div>
 
         {/* PROFILE DISPLAY */}
-        <div className="w-full absolute bottom-12 right-0 opacity-90">
+        <div className="w-full absolute bottom-1 right-0 opacity-90">
           <div className="space-y-6 mb-1">
-            <div className="flex text-white text-[11px] justify-between opacity-50 text-thin pr-1">
+            <div className="flex text-white text-[11px] justify-between opacity-40 text-thin px-1">
               <h3 className="">Latest Repositories</h3>
               <div className="flex space-x-6">
                 <h3>{location}</h3>
@@ -99,14 +99,14 @@ export default function Profile(): JSX.Element {
 
             {/* REPOSITORIES */}
             <div className="space-y-1">
-              <div className="bg-[#0C0E15] bg-opacity-75 border-l-4 border-l-violet-700 w-full h-28 p-3 rounded-lg p-2">
+              <div className="bg-[#0C0E15] bg-opacity-75 border-l-4 border-l-violet-700 w-full h-24 p-3 rounded-lg p-2">
                 {/* LEFT SIDE */}
                 <div className="flex justify-between ml-1">
                   <div className="flex space-x-2">
                     {/* STARS */}
                     <span className="flex space-x-1">
                       <BsFillStarFill className="text-amber-300 text-[9px]" />{" "}
-                      <h6 className="text-white text-[8px]">24</h6>
+                      <h6 className="text-white text-[8px] ">24</h6>
                     </span>
                     {/* EYES */}
                     <span className="flex space-x-1">
@@ -121,12 +121,12 @@ export default function Profile(): JSX.Element {
                     <h6 className="text-white text-[10px]">Project Name</h6>
                   </div>
                 </div>
-                <h5 className="text-white text-xs text-center mt-4">
+                <h5 className="text-white text-xs text-center mt-4 opacity-70">
                   Welcome to this Project
                 </h5>
               </div>
 
-              <div className="bg-[#0C0E15] bg-opacity-75 border-l-4 border-l-violet-700 w-full h-28 p-3 rounded-lg p-2">
+              <div className="bg-[#0C0E15] bg-opacity-75 border-l-4 border-l-violet-700 w-full h-24 p-3 rounded-lg p-2">
                 {/* LEFT SIDE */}
                 <div className="flex justify-between ml-1">
                   <div className="flex space-x-2">
@@ -148,12 +148,12 @@ export default function Profile(): JSX.Element {
                     <h6 className="text-white text-[10px]">Project Name</h6>
                   </div>
                 </div>
-                <h5 className="text-white text-xs text-center mt-4">
+                <h5 className="text-white text-xs text-center mt-4 opacity-70">
                   Welcome to this Project
                 </h5>
               </div>
 
-              <div className="bg-[#0C0E15] bg-opacity-75 border-l-4 border-l-violet-700 w-full h-28 p-3 rounded-lg p-2">
+              <div className="bg-[#0C0E15] bg-opacity-75 border-l-4 border-l-violet-700 w-full h-24 p-3 rounded-lg p-2">
                 {/* LEFT SIDE */}
                 <div className="flex justify-between ml-1">
                   <div className="flex space-x-2">
@@ -175,7 +175,34 @@ export default function Profile(): JSX.Element {
                     <h6 className="text-white text-[10px]">Project Name</h6>
                   </div>
                 </div>
-                <h5 className="text-white text-xs text-center mt-4">
+                <h5 className="text-white text-xs text-center mt-4 opacity-70">
+                  Welcome to this Project
+                </h5>
+              </div>
+
+              <div className="bg-[#0C0E15] bg-opacity-75 border-l-4 border-l-violet-700 w-full h-24 p-3 rounded-lg p-2">
+                {/* LEFT SIDE */}
+                <div className="flex justify-between ml-1">
+                  <div className="flex space-x-2">
+                    {/* STARS */}
+                    <span className="flex space-x-1">
+                      <BsFillStarFill className="text-amber-300 text-[9px]" />{" "}
+                      <h6 className="text-white text-[8px]">24</h6>
+                    </span>
+                    {/* EYES */}
+                    <span className="flex space-x-1">
+                      <BsEye className="text-blue-600 text-[13px]" />{" "}
+                      <h6 className="text-white text-[8px]">302</h6>
+                    </span>
+                  </div>
+
+                  {/* RIGHT SIDE */}
+                  <div className="flex space-x-2">
+                    <BsBoxArrowUpRight className="text-violet-600 text-xs" />
+                    <h6 className="text-white text-[10px]">Project Name</h6>
+                  </div>
+                </div>
+                <h5 className="text-white text-xs text-center mt-4 opacity-70">
                   Welcome to this Project
                 </h5>
               </div>
