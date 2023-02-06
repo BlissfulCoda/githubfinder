@@ -16,11 +16,13 @@ export interface GithubContextDataInterface {
   loading: boolean;
   users: UserInterface[];
   user: {};
+  repos: UserInterface[];
   initialState: GithubState;
   searchUsers: (value: string) => void;
   fetchUser: (value: string) => void;
   setLoading: () => void;
   clearUsers: () => void;
+  getUserRepos: (value: string) => void;
 }
 
 const GithubContext = createContext<GithubContextDataInterface | null>(null);
@@ -35,6 +37,7 @@ export const initialState = {
   users: [],
   user: {},
   loading: false,
+  repos: [],
 };
 
 export const GithubProvider = ({
@@ -63,6 +66,7 @@ export const GithubProvider = ({
       payload: items,
     });
   };
+
   // FETCH SINGLE USER
   const fetchUser = async (login: string) => {
     setLoading();
@@ -86,6 +90,33 @@ export const GithubProvider = ({
     }
   };
 
+  // FETCH A USER REPO
+  const getUserRepos = async (login: string) => {
+    setLoading();
+
+    const params = new URLSearchParams({
+      sort: "created",
+      per_page: 10,
+    });
+
+    const response = await fetch(
+      `${GITHUB_URL}/users/${login}/repos?${params}`,
+      {
+        method: "GET",
+        headers: {
+          Accept: "application/json",
+        },
+      }
+    );
+
+    const data = await response.json();
+
+    dispatch({
+      type: REDUCER_ACTION_TYPE.GET_REPOS,
+      payload: data,
+    });
+  };
+
   const setLoading = () => dispatch({ type: REDUCER_ACTION_TYPE.SET_LOADING });
 
   const clearUsers = () => dispatch({ type: REDUCER_ACTION_TYPE.CLEAR_USERS });
@@ -96,11 +127,13 @@ export const GithubProvider = ({
         users: state.users,
         user: state.user,
         loading: state.loading,
+        repos: state.repos,
         initialState,
         searchUsers,
         fetchUser,
         setLoading,
         clearUsers,
+        getUserRepos,
       }}
     >
       {children}

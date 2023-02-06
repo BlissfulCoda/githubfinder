@@ -46,7 +46,7 @@ export default function UserSearch(): JSX.Element {
           <>
             <input
               type="text"
-              className="bg-black border border-x-0 border-t-0 focus:outline-none border-b-zinc-500 text-neutral-content placeholder:text-[9px] text-xs focus:placeholder:text-[7px] "
+              className="bg-black border border-x-0 border-t-0 focus:outline-none border-b-zinc-500 text-neutral-content placeholder:text-[9px] text-xs focus:placeholder:text-[7px] text-white"
               placeholder="Search a user..."
               onChange={handleChange}
               value={text}

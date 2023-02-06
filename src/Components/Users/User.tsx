@@ -17,7 +17,7 @@ export default function User({ user }: UserProps): JSX.Element {
           <img
             src={avatar_url}
             alt="Profile"
-            className={`brightness-75 hover:brightness-100 object-center h-full w-full object-cover`}
+            className={`brightness-75 hover:brightness-100 object-center h-full w-full object-cover `}
             onMouseEnter={() => setHoverText(true)}
             onMouseLeave={() => setHoverText(false)}
           />

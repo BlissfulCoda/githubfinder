@@ -1,23 +1,20 @@
 import { useContext, useEffect } from "react";
-import { Link, useParams, useNavigate } from "react-router-dom";
-import { FaLongArrowAltLeft, FaUser } from "react-icons/fa";
-import {
-  BsFillStarFill,
-  BsEye,
-  BsArrowLeft,
-  BsBoxArrowUpRight,
-} from "react-icons/bs";
+import { Link, useParams } from "react-router-dom";
+import { FaUser } from "react-icons/fa";
+import { BsArrowLeft } from "react-icons/bs";
 import Footer from "../Components/Layout/Footer";
 import Button from "../Components/Shared/Button";
 import { UserInterface } from "../Context/Github/GithubContextData";
 import Spinner from "../Components/Shared/Spinner";
 import JohnWick from "../assets/JohnWick.png";
+import UserRepos from "../Components/Repos/UserRepos";
 
 import GithubContext from "../Context/Github/GithubContextData";
 import { GithubContextDataInterface } from "../Context/Github/GithubContextData";
+import User from "../Components/Users/User";
 
 export default function Profile(): JSX.Element {
-  const { loading, user, fetchUser } = useContext(
+  const { loading, user, fetchUser, getUserRepos } = useContext(
     GithubContext
   ) as GithubContextDataInterface;
 
@@ -35,11 +32,14 @@ export default function Profile(): JSX.Element {
     location,
     hireable,
     website,
+    github,
+    html_url,
+    twitter_username,
   }: UserInterface = user;
 
   useEffect(() => {
     fetchUser(userLogin);
-    console.log(user);
+    getUserRepos(userLogin);
   }, []);
 
   if (loading) return <Spinner />;
@@ -50,14 +50,14 @@ export default function Profile(): JSX.Element {
         <img
           src={avatar_url}
           alt={`image of ${userLogin}`}
-          className={`object-center h-[500px] w-full object-cover object-top  brightness-50 contrast-50`}
+          className={`object-center h-[500px] w-full object-cover object-top contrast-150 opacity-80`}
         />
       </figure>
       <div className="w-full absolute top-2 right-0 h-full p-2 pt-5">
         <nav className="flex justify-between">
           <Link to="/">
             <Button>
-              <BsArrowLeft className="text-2xl text-yellow-500 bg-[#1D15E] rounded-full p-1" />
+              <BsArrowLeft className="text-2xl text-yellow-500 bg-[#1D252E]  rounded-full p-1" />
             </Button>
           </Link>
 
@@ -65,7 +65,7 @@ export default function Profile(): JSX.Element {
             <FaUser className="text-sky-900" />
             <h1
               className={`font-light ${
-                hireable ? "text-green-400" : "text-red-400"
+                hireable ? "text-green-400 " : "text-red-400"
               }`}
             >
               Hireable
@@ -73,7 +73,7 @@ export default function Profile(): JSX.Element {
           </div>
         </nav>
 
-        <div className="flex text-white text-[7px] space-x-2 border-[0.1px] border-opacity-10 border-y-neutral-50 border-x-0 py-2 font-light w-52 text-right ml-auto pl-5">
+        <div className="flex text-white text-[7px] space-x-2 border-[0.2px] border-opacity-40 border-y-neutral-50 border-x-0 py-2 font-light w-52 text-right ml-auto pl-7">
           <h4>
             {followers} <span className="opacity-40">Followers</span>
           </h4>
@@ -87,152 +87,24 @@ export default function Profile(): JSX.Element {
 
         {/* PROFILE DISPLAY */}
         <div className="w-full absolute bottom-6 right-0 opacity-90">
-          <div className="space-y-6 mb-1">
-            <div className="flex text-white text-[11px] justify-between opacity-60 text-thin px-1">
+          <div className="space-y-4 mb-1">
+            <div className="flex text-white text-[11px] justify-between opacity-70 text-thin ">
               <h3 className="">Latest Repositories</h3>
-              <div className="flex space-x-6">
-                <h3>{location}</h3>
+              <div className="flex space-x-6 pr-2">
+                {location && <h3>{location}</h3>}
                 <h3>Website</h3>
-                <h3>Github</h3>
+                {html_url && (
+                  <h3>
+                    <a href={html_url} target="_blank" rel="noreferrer">
+                      Github
+                    </a>
+                  </h3>
+                )}
               </div>
             </div>
 
             {/* REPOSITORIES */}
-            <div className="space-y-1 overflow-y-auto h-80">
-              <div className="bg-[#0C0E15] bg-opacity-75 border-l-4 border-l-violet-700 w-full h-28 p-3 rounded-lg p-2">
-                {/* LEFT SIDE */}
-                <div className="flex justify-between ml-1">
-                  <div className="flex space-x-2">
-                    {/* STARS */}
-                    <span className="flex space-x-1">
-                      <BsFillStarFill className="text-amber-300 text-[9px]" />{" "}
-                      <h6 className="text-white text-[8px] ">24</h6>
-                    </span>
-                    {/* EYES */}
-                    <span className="flex space-x-1">
-                      <BsEye className="text-blue-600 text-[13px]" />{" "}
-                      <h6 className="text-white text-[8px]">302</h6>
-                    </span>
-                  </div>
-
-                  {/* RIGHT SIDE */}
-                  <div className="flex space-x-2">
-                    <BsBoxArrowUpRight className="text-violet-600 text-xs" />
-                    <h6 className="text-white text-[10px]">Project Name</h6>
-                  </div>
-                </div>
-                <h5 className="text-white text-xs text-center mt-4 opacity-70">
-                  Welcome to this Project
-                </h5>
-              </div>
-
-              <div className="bg-[#0C0E15] bg-opacity-75 border-l-4 border-l-violet-700 w-full h-28 p-3 rounded-lg p-2">
-                {/* LEFT SIDE */}
-                <div className="flex justify-between ml-1">
-                  <div className="flex space-x-2">
-                    {/* STARS */}
-                    <span className="flex space-x-1">
-                      <BsFillStarFill className="text-amber-300 text-[9px]" />{" "}
-                      <h6 className="text-white text-[8px]">24</h6>
-                    </span>
-                    {/* EYES */}
-                    <span className="flex space-x-1">
-                      <BsEye className="text-blue-600 text-[13px]" />{" "}
-                      <h6 className="text-white text-[8px]">302</h6>
-                    </span>
-                  </div>
-
-                  {/* RIGHT SIDE */}
-                  <div className="flex space-x-2">
-                    <BsBoxArrowUpRight className="text-violet-600 text-xs" />
-                    <h6 className="text-white text-[10px]">Project Name</h6>
-                  </div>
-                </div>
-                <h5 className="text-white text-xs text-center mt-4 opacity-70">
-                  Welcome to this Project
-                </h5>
-              </div>
-
-              <div className="bg-[#0C0E15] bg-opacity-75 border-l-4 border-l-violet-700 w-full h-28 p-3 rounded-lg p-2">
-                {/* LEFT SIDE */}
-                <div className="flex justify-between ml-1">
-                  <div className="flex space-x-2">
-                    {/* STARS */}
-                    <span className="flex space-x-1">
-                      <BsFillStarFill className="text-amber-300 text-[9px]" />{" "}
-                      <h6 className="text-white text-[8px]">24</h6>
-                    </span>
-                    {/* EYES */}
-                    <span className="flex space-x-1">
-                      <BsEye className="text-blue-600 text-[13px]" />{" "}
-                      <h6 className="text-white text-[8px]">302</h6>
-                    </span>
-                  </div>
-
-                  {/* RIGHT SIDE */}
-                  <div className="flex space-x-2">
-                    <BsBoxArrowUpRight className="text-violet-600 text-xs" />
-                    <h6 className="text-white text-[10px]">Project Name</h6>
-                  </div>
-                </div>
-                <h5 className="text-white text-xs text-center mt-4 opacity-70">
-                  Welcome to this Project
-                </h5>
-              </div>
-
-              <div className="bg-[#0C0E15] bg-opacity-75 border-l-4 border-l-violet-700 w-full h-28 p-3 rounded-lg p-2">
-                {/* LEFT SIDE */}
-                <div className="flex justify-between ml-1">
-                  <div className="flex space-x-2">
-                    {/* STARS */}
-                    <span className="flex space-x-1">
-                      <BsFillStarFill className="text-amber-300 text-[9px]" />{" "}
-                      <h6 className="text-white text-[8px]">24</h6>
-                    </span>
-                    {/* EYES */}
-                    <span className="flex space-x-1">
-                      <BsEye className="text-blue-600 text-[13px]" />{" "}
-                      <h6 className="text-white text-[8px]">302</h6>
-                    </span>
-                  </div>
-
-                  {/* RIGHT SIDE */}
-                  <div className="flex space-x-2">
-                    <BsBoxArrowUpRight className="text-violet-600 text-xs" />
-                    <h6 className="text-white text-[10px]">Project Name</h6>
-                  </div>
-                </div>
-                <h5 className="text-white text-xs text-center mt-4 opacity-70">
-                  Welcome to this Project
-                </h5>
-              </div>
-              <div className="bg-[#0C0E15] bg-opacity-75 border-l-4 border-l-violet-700 w-full h-28 p-3 rounded-lg p-2">
-                {/* LEFT SIDE */}
-                <div className="flex justify-between ml-1">
-                  <div className="flex space-x-2">
-                    {/* STARS */}
-                    <span className="flex space-x-1">
-                      <BsFillStarFill className="text-amber-300 text-[9px]" />{" "}
-                      <h6 className="text-white text-[8px]">24</h6>
-                    </span>
-                    {/* EYES */}
-                    <span className="flex space-x-1">
-                      <BsEye className="text-blue-600 text-[13px]" />{" "}
-                      <h6 className="text-white text-[8px]">302</h6>
-                    </span>
-                  </div>
-
-                  {/* RIGHT SIDE */}
-                  <div className="flex space-x-2">
-                    <BsBoxArrowUpRight className="text-violet-600 text-xs" />
-                    <h6 className="text-white text-[10px]">Project Name</h6>
-                  </div>
-                </div>
-                <h5 className="text-white text-xs text-center mt-4 opacity-70">
-                  Welcome to this Project
-                </h5>
-              </div>
-            </div>
+            <UserRepos />
           </div>
           <Footer />
         </div>
