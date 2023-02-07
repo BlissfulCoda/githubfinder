@@ -18,8 +18,8 @@ export default function Home(): JSX.Element {
             <div className="flex mt-56 flex-col items-center justify-center space-y-2 md:space-y-4 tracking-[.55em]">
               {" "}
               <p className="text-5xl md:text-7xl">GITHUB</p>
-              <hr className="text-white w-36 opacity-50 md:w-64" />
-              <p className="text-xs md:text-md">FINDER</p>
+              <hr className="text-white w-36 opacity-20 md:w-64" />
+              <p className="text-xs md:text-md opacity-80">FINDER</p>
             </div>
           )}
         </div>

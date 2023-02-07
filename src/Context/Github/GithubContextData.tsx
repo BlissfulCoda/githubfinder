@@ -56,6 +56,7 @@ export const GithubProvider = ({
       method: "GET",
       headers: {
         Accept: "application/json",
+        Authorization: `token ${import.meta.env.VITE_REACT_APP_GITHUB_TOKEN}`,
       },
     });
 
