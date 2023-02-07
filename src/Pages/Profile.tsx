@@ -6,12 +6,10 @@ import Footer from "../Components/Layout/Footer";
 import Button from "../Components/Shared/Button";
 import { UserInterface } from "../Context/Github/GithubContextData";
 import Spinner from "../Components/Shared/Spinner";
-import JohnWick from "../assets/JohnWick.png";
 import UserRepos from "../Components/Repos/UserRepos";
 
 import GithubContext from "../Context/Github/GithubContextData";
 import { GithubContextDataInterface } from "../Context/Github/GithubContextData";
-import User from "../Components/Users/User";
 
 export default function Profile(): JSX.Element {
   const { loading, user, fetchUser, getUserRepos } = useContext(
@@ -45,12 +43,12 @@ export default function Profile(): JSX.Element {
   if (loading) return <Spinner />;
 
   return (
-    <section className="mx-9 mt-3 relative h-screen">
+    <section className="mx-7 mt-3 relative h-screen md:w-[600px] md:mx-auto">
       <figure>
         <img
           src={avatar_url}
           alt={`image of ${userLogin}`}
-          className={`object-center h-[500px] w-full object-cover object-top contrast-150 opacity-80`}
+          className={`object-center h-[450px] md:h-[600px] w-full object-cover object-top contrast-150 opacity-80`}
         />
       </figure>
       <div className="w-full absolute top-2 right-0 h-full p-2 pt-5">
@@ -86,13 +84,13 @@ export default function Profile(): JSX.Element {
         </div>
 
         {/* PROFILE DISPLAY */}
-        <div className="w-full absolute bottom-6 right-0 opacity-90">
+        <div className="w-full absolute bottom-6 right-0 opacity-90 sm:-bottom-28">
           <div className="space-y-4 mb-1">
-            <div className="flex text-white text-[11px] justify-between opacity-70 text-thin ">
+            <div className="flex text-white text-[11px] justify-between opacity-70 text-thin">
               <h3 className="">Latest Repositories</h3>
               <div className="flex space-x-6 pr-2">
                 {location && <h3>{location}</h3>}
-                <h3>Website</h3>
+                {website && <a href={website}>Website</a>}
                 {html_url && (
                   <h3>
                     <a href={html_url} target="_blank" rel="noreferrer">

@@ -12,10 +12,12 @@ export default function UserResults(): JSX.Element {
 
   if (!loading) {
     return (
-      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-0 px-1 h-screen overflow-y-auto h-[800px] ">
-        {users.map((user) => (
-          <User key={user.id} user={user} />
-        ))}
+      <div className="relative h-[800px] overflow-y-auto">
+        <div className="absolute top-0 -left-4 container grid grid-cols-3 sm:grid-cols-3 md:grid-cols-5 gap-0 px-1 ">
+          {users.map((user) => (
+            <User key={user.id} user={user} />
+          ))}
+        </div>
       </div>
     );
   } else {

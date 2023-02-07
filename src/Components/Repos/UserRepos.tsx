@@ -8,7 +8,7 @@ export default function UserRepos(): JSX.Element {
   const { repos } = useContext(GithubContext) as GithubContextDataInterface;
 
   return (
-    <div className="space-y-2 overflow-y-auto h-80 scrollbar-thin scrollbar-[#0C0E15]">
+    <div className="space-y-2 overflow-y-auto h-96 scrollbar-thin scrollbar-[#0C0E15]">
       {repos.map((item, index) => (
         <div
           key={item.id}
@@ -37,11 +37,11 @@ export default function UserRepos(): JSX.Element {
                 {" "}
                 <BsBoxArrowUpRight className="text-violet-700 text-xs" />
               </a>
-              <h6 className="text-white text-[10px]">{item.name}</h6>
+              <h6 className="text-white text-[9px]">{item.name}</h6>
             </div>
           </div>
           <h5 className="text-white text-xs text-center mt-4 opacity-70">
-            <h1>{item.description}</h1>
+            {item.description}
           </h5>
         </div>
       ))}

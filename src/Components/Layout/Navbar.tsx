@@ -9,7 +9,7 @@ export default function Navbar(): JSX.Element {
         <Link to="/">
           <FaGithub className="text-slate-500 text-lg" />
         </Link>
-        <div className="flex space-x-4">
+        <div className="flex space-x-5">
           <UserSearch />
           <a
             href="https://www.behance.net/gallery/161600827/Github-Project-UI-Design"

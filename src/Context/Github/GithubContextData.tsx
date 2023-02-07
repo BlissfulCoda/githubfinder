@@ -96,7 +96,7 @@ export const GithubProvider = ({
 
     const params = new URLSearchParams({
       sort: "created",
-      per_page: 10,
+      per_page: "10",
     });
 
     const response = await fetch(
@@ -124,10 +124,7 @@ export const GithubProvider = ({
   return (
     <GithubContext.Provider
       value={{
-        users: state.users,
-        user: state.user,
-        loading: state.loading,
-        repos: state.repos,
+        ...state,
         initialState,
         searchUsers,
         fetchUser,

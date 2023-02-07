@@ -9,17 +9,17 @@ export default function Home(): JSX.Element {
   const { users } = useContext(GithubContext) as GithubContextDataInterface;
   return (
     <section>
-      <div className="h-screen flex flex-col justify-between mt-4">
+      <div className="h-screen flex flex-col justify-between mt-4 ">
         <Navbar />
         <div className="container mx-auto font-Lustria text-white  font-thin">
           {users.length > 0 ? (
             <UserResults />
           ) : (
-            <div className="flex mt-56 flex-col items-center justify-center space-y-2 tracking-widest">
+            <div className="flex mt-56 flex-col items-center justify-center space-y-2 md:space-y-4 tracking-[.55em]">
               {" "}
-              <p className="text-5xl ">GITHUB</p>
-              <hr className="text-white w-36 opacity-50" />
-              <p className="text-xs">FINDER</p>
+              <p className="text-5xl md:text-7xl">GITHUB</p>
+              <hr className="text-white w-36 opacity-50 md:w-64" />
+              <p className="text-xs md:text-md">FINDER</p>
             </div>
           )}
         </div>

@@ -17,21 +17,24 @@ export default function UserSearch(): JSX.Element {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
     setText(e.target.value);
 
+  const handleSearch = () => {
+    toast.error("clicked....");
+  };
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (text === " ") {
+    if (text === "") {
       toast.error("Enter something!");
     } else {
       searchUsers(text);
     }
-
     setText(" ");
   };
 
   return (
     <div>
-      <form action="" className="flex" onSubmit={handleSubmit}>
+      <form className="flex" onSubmit={handleSubmit}>
         {users.length > 0 ? (
           <div className="flex space-x-1 ">
             <span className="text-white opacity-60 text-sm ">clear</span>
@@ -52,7 +55,10 @@ export default function UserSearch(): JSX.Element {
               value={text}
             />
             <Button>
-              <FaSearch className="text-slate-500 text-xs" />
+              <FaSearch
+                className="text-slate-500 text-xs"
+                onClick={handleSearch}
+              />
             </Button>
           </>
         )}
