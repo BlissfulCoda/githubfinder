@@ -8,6 +8,8 @@ import { UserInterface } from "../Context/Github/GithubContextData";
 import Spinner from "../Components/Shared/Spinner";
 import UserRepos from "../Components/Repos/UserRepos";
 
+import JohnWick from "../assets/JohnWick.png";
+
 import GithubContext from "../Context/Github/GithubContextData";
 import { GithubContextDataInterface } from "../Context/Github/GithubContextData";
 
@@ -43,7 +45,7 @@ export default function Profile(): JSX.Element {
   if (loading) return <Spinner />;
 
   return (
-    <section className="mx-2 mt-3 relative h-screen md:w-[600px] md:mx-auto">
+    <section className="mt-3 relative h-screen md:w-[600px] mx-auto max-w-sm">
       <figure>
         <img
           src={avatar_url}
@@ -84,7 +86,7 @@ export default function Profile(): JSX.Element {
         </div>
 
         {/* PROFILE DISPLAY */}
-        <div className="w-full absolute bottom-20 right-0 opacity-90 sm:-bottom-28">
+        <div className="w-full absolute -bottom-36 right-0 opacity-90 sm:-bottom-28">
           <div className="space-y-4 mb-1">
             <div className="flex text-white text-[11px] justify-between opacity-70 text-thin">
               <h3 className="">Latest Repositories</h3>

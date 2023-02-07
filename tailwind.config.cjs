@@ -2,6 +2,13 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
+    screens: {
+      sm: "480px",
+      md: "640px",
+      lg: "896px",
+      xl: "1024px",
+      "2xl": "1280px",
+    },
     extend: {
       boxShadow: {
         "3xl": "0px 0.614696px 13.5233px rgba(255, 255, 255, 0.25)",

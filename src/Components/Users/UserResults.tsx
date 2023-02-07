@@ -12,8 +12,8 @@ export default function UserResults(): JSX.Element {
 
   if (!loading) {
     return (
-      <div className="relative h-[800px] w-[450px] sm:w-full mx-auto overflow-y-auto overflow-x-hidden">
-        <div className="absolute top-0 -left-12 container grid grid-cols-3 sm:grid-cols-3 md:grid-cols-5 gap-0 px-1 lg:grid-cols-6">
+      <div className="container relative h-[800px] max-w-[450px] sm:max-w-3xl md:max-w-3xl lg:max-w-4xl mx-auto overflow-y-auto overflow-x-hidden ">
+        <div className="absolute top-0 -left-12 container grid grid-cols-3 md:grid-cols-4 gap-0 px-1 lg:grid-cols-5">
           {users.map((user) => (
             <User key={user.id} user={user} />
           ))}

@@ -4,8 +4,8 @@ import UserSearch from "../Users/UserSearch";
 
 export default function Navbar(): JSX.Element {
   return (
-    <nav className="mb-12 contrast-200">
-      <div className="container mx-auto flex justify-between pt-5 px-4">
+    <nav className="mb-10 contrast-200 ">
+      <div className="container mx-auto flex justify-between pt-5 px-4 sm:px-0 ">
         <Link to="/">
           <FaGithub className="text-slate-500 text-lg" />
         </Link>
