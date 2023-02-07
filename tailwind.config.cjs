@@ -19,5 +19,5 @@ module.exports = {
       myPolygon: "polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%)",
     },
   },
-  plugins: [require("tailwind-clip-path"), require("daisyui")],
+  plugins: [require("tailwind-clip-path"), require("tailwind-scrollbar")],
 };
