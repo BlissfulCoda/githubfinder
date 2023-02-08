@@ -12,7 +12,7 @@ export default function App() {
     <GithubProvider>
       <Router>
         <div className="relative h-screen bg-black bg-center contrast-200 saturate-150 overflow-hidden pt-2 ">
-          <figure className="absolute top-16 -left-48 h-[630px] w-[630px] sm:top-12 sm:-left-44 sm:h-[700px] sm:w-[700px] md:-top-4 md:-left-10 md:h-[900px] md:w-[900px] lg:h-[1100px] lg:w-[1100px] lg:-top-12 lg:left-12 xl:h-[1200px] xl:w-[1200px] xl:left-32">
+          <figure className="absolute top-16 -left-48 h-[630px] w-[630px] sm:top-12 sm:-left-40 sm:h-[700px] sm:w-[700px] md:-top-4 md:-left-10 md:h-[900px] md:w-[900px] lg:h-[1100px] lg:w-[1100px] lg:-top-12 lg:left-12 xl:h-[1200px] xl:w-[1200px] xl:left-32">
             <img
               src={SpinningWorld}
               alt=""

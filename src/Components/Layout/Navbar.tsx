@@ -1,14 +1,13 @@
-import { FaBehance, FaSearch, FaGithub } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { FaBehance, FaGithub } from "react-icons/fa";
 import UserSearch from "../Users/UserSearch";
+
+import GithubLogo from "../Shared/GithubLogo";
 
 export default function Navbar(): JSX.Element {
   return (
-    <nav className="mb-10 contrast-200 ">
-      <div className="container mx-auto flex justify-between pt-5 px-4 sm:px-0 ">
-        <Link to="/">
-          <FaGithub className="text-slate-500 text-lg" />
-        </Link>
+    <nav className="mb-10 contrast-200">
+      <div className="container mx-auto flex justify-between pt-8 px-4 sm:px-0 ">
+        <GithubLogo />
         <div className="flex space-x-5">
           <UserSearch />
           <a

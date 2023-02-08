@@ -1,4 +1,4 @@
-import { initialState } from "./GithubContextData";
+import { initialState } from '../Github/GithubContextData';
 
 export const enum REDUCER_ACTION_TYPE {
   GET_USERS,
