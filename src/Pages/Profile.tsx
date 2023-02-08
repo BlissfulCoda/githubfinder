@@ -46,8 +46,8 @@ export default function Profile(): JSX.Element {
   if (loading) return <Spinner />;
 
   return (
-    <section className="md: h-full w-full mx-auto p-2 ">
-      <section className="relative container h-screen w-full mx-auto max-w-sm sm:max-w-md border border-blue-700 px-4 sm:px-1 border-opacity-10 rounded-[25px] md:overflow-hidden md:border-opacity-30 md:flex md:mt-20 md:h-4/5 lg:h-5/6 md:max-w-3xl lg:max-w-4xl xl:max-w-4xl bg-[#010101] bg-opacity-10 ">
+    <section className="md:h-full w-full mx-auto py-2 ">
+      <section className="relative container h-screen w-full mx-auto max-w-sm sm:max-w-md border border-blue-700 px-1 sm:px-1 border-opacity-10 rounded-[25px] md:overflow-hidden md:border-opacity-30 md:flex md:mt-20 md:h-4/5 lg:h-5/6 md:max-w-3xl lg:max-w-4xl xl:max-w-4xl bg-[#010101] bg-opacity-0 md:bg-opacity-10 ">
         {/* LEFT */}
         <div className="hidden md:flex flex-col w-10 lg:w-14 h-full justify-between pb-20 items-center pt-14">
           <Link to="/">
@@ -57,7 +57,9 @@ export default function Profile(): JSX.Element {
           </Link>
 
           <span className="text-white opacity-50 -rotate-90 flex ">
-            <span className="text-white text-[7px]">RonnieKiyegga@hotmail.com</span>
+            <span className="text-white text-[7px]">
+              RonnieKiyegga@hotmail.com
+            </span>
           </span>
         </div>
 
@@ -69,7 +71,7 @@ export default function Profile(): JSX.Element {
               <img
                 src={avatar_url}
                 alt={`image of ${userLogin}`}
-                className={`object-center h-[430px] w-full object-cover object-top contrast-150 opacity-80 md:h-[520px] lg:h-[550px] md:w-6/6`}
+                className={`object-center h-[400px] w-full object-cover object-top contrast-150 opacity-80 md:h-[520px] lg:h-[550px] md:w-6/6`}
               />
             </figure>
             <div className="w-full absolute top-2 right-0 h-24 p-2 pt-5 md:pt-2 ">
