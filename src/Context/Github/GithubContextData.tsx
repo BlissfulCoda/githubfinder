@@ -110,7 +110,6 @@ export const GithubProvider = ({
     );
 
     const data = await response.json();
-    console.log(data)
     dispatch({
       type: REDUCER_ACTION_TYPE.GET_REPOS,
       payload: data,

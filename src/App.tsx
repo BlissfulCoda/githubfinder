@@ -11,15 +11,15 @@ export default function App() {
   return (
     <GithubProvider>
       <Router>
-        <div className="relative h-screen w-screen bg-black bg-center contrast-200 saturate-150 overflow-hidden pt-2">
-          <figure className="absolute top-16 -left-44 h-[650px] w-[650px] sm:top-12 sm:-left-36 sm:h-[700px] sm:w-[700px] md:-top-4 md:left-20 md:h-[800px] md:w-[800px] lg:h-[900px] lg:w-[900px] lg:left-32 lg:-top-6  xl:h-[1000px] xl:w-[1000px] xl:left-64">
+        <div className="relative h-screen w-screen bg-black bg-center contrast-200 saturate-150 overflow-hidden pt-2 bg-dark-image bg-no-repeat bg-[length:660px_660px]  bg-[center_top_7rem]">
+          {/* <figure className="absolute h-screen top-20 -left-48 h-[650px] w-[650px] sm:top-12 sm:-left-36 sm:h-[700px] sm:w-[700px] md:-top-4 md:left-20 md:h-[800px] md:w-[800px] lg:h-[900px] lg:w-[900px] lg:left-32 lg:-top-6 xl:h-[1000px] xl:w-[1000px] xl:left-64">
             <img
               src={SpinningWorld}
-              alt=""
-              className="bg-no-repeat bg-center bg-blend-hard-light contrast-50 saturate-100 "
+              alt="Spinning world gif"
+              className="bg-no-repeat bg-center bg-blend-hard-light contrast-100 saturate-150 "
             />
-          </figure>
-          <main className="absolute left-0 right-0 bottom-0 top-1 ">
+          </figure> */}
+          <main className="absolute left-0 right-0 bottom-0 top-2 z-40">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/user/:login" element={<Profile />} />

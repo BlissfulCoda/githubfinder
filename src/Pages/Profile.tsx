@@ -71,7 +71,7 @@ export default function Profile(): JSX.Element {
               <img
                 src={avatar_url}
                 alt={`image of ${userLogin}`}
-                className={`object-center h-[400px] w-full object-cover object-top contrast-150 opacity-80 md:h-[520px] lg:h-[550px] md:w-6/6`}
+                className={`object-center h-[400px] w-full object-cover object-top contrast-100 opacity-80 md:h-[520px] lg:h-[550px] md:w-6/6`}
               />
             </figure>
             <div className="w-full absolute top-2 right-0 h-24 p-2 pt-5 md:pt-2 ">
