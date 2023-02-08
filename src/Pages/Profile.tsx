@@ -110,7 +110,7 @@ export default function Profile(): JSX.Element {
           </div>
 
           {/* PROFILE DISPLAY */}
-          <div className="w-full -mt-8 opacity-90 sm:-bottom-28 md:order-1 md:w-[330px] md:h-[650px] md:flex md:flex-col justify-between md:p-1 md:mt-6 md:pr-2 lg:w-[400px] lg:h-[660px] lg:p-0 ">
+          <div className="w-full -mt-6 opacity-90 sm:-bottom-28 md:order-1 md:w-[330px] md:h-[650px] md:flex md:flex-col justify-between md:p-1 md:mt-6 md:pr-2 lg:w-[400px] lg:h-[660px] lg:p-0 ">
             <div className="flex space-x-3 items-center text-[9px] p-1 hidden md:flex md:justify-end ">
               <FaUser className="text-sky-800" />
               <h1
