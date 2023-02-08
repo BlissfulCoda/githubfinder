@@ -27,7 +27,7 @@ export interface GithubContextDataInterface {
 
 const GithubContext = createContext<GithubContextDataInterface | null>(null);
 
-const GITHUB_URL = import.meta.env.VITE_REACT_APP_GITHUB_URL;
+const GITHUB_URL = "https://api.github.com";
 
 interface GithubContextInterface {
   children: React.ReactNode;
