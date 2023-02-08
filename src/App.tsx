@@ -19,7 +19,7 @@ export default function App() {
               className="bg-no-repeat bg-center bg-blend-hard-light contrast-50 saturate-100 "
             />
           </figure>
-          <main className="absolute left-0 right-0 bottom-0 -top-3">
+          <main className="absolute left-0 right-0 bottom-0 top-1 ">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/user/:login" element={<Profile />} />

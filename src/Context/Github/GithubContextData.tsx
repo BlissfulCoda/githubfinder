@@ -96,7 +96,7 @@ export const GithubProvider = ({
 
     const params = new URLSearchParams({
       sort: "created",
-      per_page: "10",
+      per_page: "20",
     });
 
     const response = await fetch(

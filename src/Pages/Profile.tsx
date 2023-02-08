@@ -46,7 +46,7 @@ export default function Profile(): JSX.Element {
   if (loading) return <Spinner />;
 
   return (
-    <section className="relative h-screen mx-auto max-w-sm sm:max-w-md border border-blue-800 border-opacity-10 rounded-[25px] md:overflow-hidden md:border-opacity-30 md:flex px-3 md:mt-20 md:h-4/5 lg:h-5/6 md:max-w-3xl lg:max-w-4xl lg:mx-12 xl:max-w-4xl bg-[#010101] bg-opacity-30">
+    <section className="relative h-screen mx-auto max-w-sm sm:max-w-md border border-blue-500 border-opacity-10 rounded-[25px] md:overflow-hidden md:border-opacity-30 md:flex px-3 md:mt-20 md:h-4/5 lg:h-5/6 md:max-w-3xl lg:max-w-4xl lg:mx-12 xl:max-w-4xl bg-[#010101] bg-opacity-30 md:ml-0">
       {/* LEFT */}
       <div className="hidden md:flex flex-col w-9 lg:w-12 h-full justify-between pb-20 items-center pt-14">
         <Link to="/">
@@ -61,14 +61,14 @@ export default function Profile(): JSX.Element {
       </div>
 
       {/* MIDDLE */}
-      <div className="relative md:border md:border-x-neutral-400  md:px-1 md:border-opacity-20 md:border-y-0 w-full md:flex md:justify-between md:pt-10 md:space-x-1 ">
+      <div className="relative md:border md:border-x-neutral-300  md:px-1 md:border-opacity-20 md:border-y-0 w-full md:flex md:justify-between md:pt-10 md:space-x-1 ">
         {/* IMAGE */}
         <div className="md:w-80 md:order-2 relative ">
           <figure>
             <img
               src={avatar_url}
               alt={`image of ${userLogin}`}
-              className={`object-center h-[390px] w-full object-cover object-top contrast-150 opacity-80 md:h-[520px] lg:h-[550px] md:w-6/6`}
+              className={`object-center h-[430px] w-full object-cover object-top contrast-150 opacity-80 md:h-[520px] lg:h-[550px] md:w-6/6`}
             />
           </figure>
           <div className="w-full absolute top-2 right-0 h-24 p-2 pt-5 md:pt-2 ">
@@ -106,7 +106,7 @@ export default function Profile(): JSX.Element {
         </div>
 
         {/* PROFILE DISPLAY */}
-        <div className="w-full -mt-8 opacity-90 sm:-bottom-28 md:order-1 md:w-[330px] md:h-[670px] md:flex md:flex-col justify-between md:p-1 md:mt-6 md:pr-2 lg:w-[380px] lg:h-[660px]">
+        <div className="w-full -mt-8 opacity-90 sm:-bottom-28 md:order-1 md:w-[330px] md:h-[670px] md:flex md:flex-col justify-between md:p-1 md:mt-6 md:pr-2 lg:w-[380px] lg:h-[660px] lg:pr-0">
           <div className="flex space-x-3 items-center text-[9px] p-1 hidden md:flex md:justify-end ">
             <FaUser className="text-sky-800" />
             <h1
