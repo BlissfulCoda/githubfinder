@@ -12,8 +12,8 @@ export default function User({ user }: UserProps): JSX.Element {
   const { login, avatar_url } = user;
   return (
     <Link to={`/user/${login}`}>
-      <section >
-        <div className="clip-path-myPolygon hover:border-4 hover:border-indigo-600 h-full w-56 sm:w-72 lg:w-72 relative hover:duration-500">
+      <section>
+        <div className="clip-path-myPolygon hover:border-4 hover:border-indigo-600 h-52 w-48 sm:w-64 lg:w-68 relative hover:duration-500">
           <img
             src={avatar_url}
             alt="Profile"

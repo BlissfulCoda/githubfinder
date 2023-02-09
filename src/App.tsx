@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import SpinningWorld from "./assets/SpinningWorld.gif";
 
 import ErrorPage from "./Pages/ErrorPage";
 import Home from "./Pages/Home";
@@ -11,15 +10,8 @@ export default function App() {
   return (
     <GithubProvider>
       <Router>
-        <div className="relative h-screen w-screen bg-black bg-center contrast-200 saturate-150 overflow-hidden pt-2 bg-dark-image bg-no-repeat bg-[length:660px_660px]  bg-[center_top_7rem]">
-          {/* <figure className="absolute h-screen top-20 -left-48 h-[650px] w-[650px] sm:top-12 sm:-left-36 sm:h-[700px] sm:w-[700px] md:-top-4 md:left-20 md:h-[800px] md:w-[800px] lg:h-[900px] lg:w-[900px] lg:left-32 lg:-top-6 xl:h-[1000px] xl:w-[1000px] xl:left-64">
-            <img
-              src={SpinningWorld}
-              alt="Spinning world gif"
-              className="bg-no-repeat bg-center bg-blend-hard-light contrast-100 saturate-150 "
-            />
-          </figure> */}
-          <main className="absolute left-0 right-0 bottom-0 top-2 z-40">
+        <div className="relative h-screen w-screen bg-black bg-center  contrast-200 saturate-150 overflow-hidden pt-2 bg-dark-image bg-no-repeat bg-[length:600px_600px]  bg-[center_top_7rem] sm:bg-[length:670px_670px] sm:bg-[center_top_5rem] md:bg-[length:800px_800px] md:bg-[center_top_1rem] lg:bg-[length:900px_900px] lg:bg-[center_top_0rem] xl:bg-[length:1000px_1000px] xl:bg-[center_top_-5rem] ">
+          <main className="absolute left-0 right-0 bottom-0 top-2 sm:top-3 md:top-5 z-40 ">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/user/:login" element={<Profile />} />
