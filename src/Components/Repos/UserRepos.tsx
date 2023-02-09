@@ -12,7 +12,7 @@ export default function UserRepos(): JSX.Element {
       {repos.map((item) => (
         <div
           key={item.id}
-          className="bg-zinc-600 bg-opacity-70 border-l-2 border-l-violet-700 w-full h-28 p-3 rounded p-2 md:h-20 lg:h-24 md:border-l-2"
+          className="bg-zinc-700 bg-opacity-90 border-l-[3px] border-l-violet-700 w-full h-28 p-3 rounded p-2 md:h-20 lg:h-24 md:border-l-2"
         >
           {/* LEFT SIDE */}
           <div className="flex justify-between ml-1">

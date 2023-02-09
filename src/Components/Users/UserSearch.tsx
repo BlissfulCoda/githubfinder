@@ -17,10 +17,6 @@ export default function UserSearch(): JSX.Element {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
     setText(e.target.value);
 
-  const handleSearch = () => {
-    toast.error("clicked....");
-  };
-
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -49,16 +45,13 @@ export default function UserSearch(): JSX.Element {
           <>
             <input
               type="text"
-              className="bg-black border border-x-0  border-t-0 focus:outline-none border-b-zinc-500 text-neutral-content placeholder:text-[8px] text-base focus:placeholder:text-[7px] text-white w-24"
+              className="bg-black border border-x-0 border-t-0 focus:outline-none border-b-zinc-500 text-neutral-content placeholder:text-[8px] text-base focus:placeholder:text-[7px] text-white w-28"
               placeholder="Search a user..."
               onChange={handleChange}
               value={text}
             />
             <Button>
-              <FaSearch
-                className="text-slate-500 text-xs"
-                onClick={handleSearch}
-              />
+              <FaSearch className="text-slate-500 text-xs" />
             </Button>
           </>
         )}
