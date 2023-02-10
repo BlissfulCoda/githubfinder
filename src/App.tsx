@@ -10,7 +10,7 @@ export default function App() {
   return (
     <GithubProvider>
       <Router>
-        <div className="h-screen flex flex-col justify-between md:justify-center md:items-center mx-auto  bg-black bg-center contrast-200 saturate-150 overflow-hidden bg-Earth bg-no-repeat bg-[length:470px_470px] bg-[center_top_6rem] sm:bg-[length:550px_550px] sm:bg-[center_top_7rem] md:bg-[length:750px_750px] md:bg-[top_left_7rem] lg:bg-[length:1000px_1000px] lg:bg-[top_left_11rem] ">
+        <div className="h-screen flex flex-col justify-between md:justify-center md:items-center mx-auto  bg-black bg-center contrast-200 saturate-150 overflow-hidden bg-Earth bg-no-repeat bg-[length:470px_470px] bg-[center_top_6rem] sm:bg-[length:550px_550px] sm:bg-[center_top_7rem] md:bg-[length:750px_750px] md:bg-[top_left_7rem] lg:bg-[length:950px_950px] lg:bg-[top_right_11rem] ">
           <main className="px-1 container mx-auto ">
             <Routes>
               <Route path="/" element={<Home />} />
