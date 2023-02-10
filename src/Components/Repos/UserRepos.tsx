@@ -24,7 +24,7 @@ export default function UserRepos(): JSX.Element {
                   {item.stargazers_count}
                 </h6>
               </span>
-              {/* EYES */}
+              {/* WATCH */}
               <span className="flex space-x-1">
                 <BsEye className="text-blue-600 text-[13px] md:text-[10px]" />{" "}
                 <h6 className="text-white text-[8px] md:text-[7px]">
@@ -39,7 +39,7 @@ export default function UserRepos(): JSX.Element {
                 {" "}
                 <BsBoxArrowUpRight className="text-violet-700 text-xs md:text-[9px]" />
               </a>
-              <h6 className="text-white text-[9px] md:text-[7px]">
+              <h6 className="text-white text-[8px] md:text-[7px]">
                 {item.name}
               </h6>
             </div>
