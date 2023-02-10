@@ -6,7 +6,7 @@ import GithubLogo from "../Shared/GithubLogo";
 export default function Navbar(): JSX.Element {
   return (
     <nav className="mb-2 contrast-200">
-      <div className="container mx-auto flex justify-between pt-6 px-0 mb-2 sm:px-0 lg:px-6 ">
+      <div className="container mx-auto flex justify-between pt-6 mb-2 sm:px-0 lg:px-6 ">
         <GithubLogo />
         <div className="flex space-x-5">
           <UserSearch />
@@ -14,7 +14,7 @@ export default function Navbar(): JSX.Element {
             href="https://www.behance.net/gallery/161600827/Github-Project-UI-Design"
             target="_blank"
           >
-            <FaBehance className="text-white text-xl" />
+            <FaBehance className="text-white text-lg" />
           </a>
         </div>
       </div>

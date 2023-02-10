@@ -6,5 +6,5 @@
 @tailwind utilities;
 
 .profile-border {
-  @apply md:border md:border-blue-800 border-opacity-30 rounded-[20px] md:border-opacity-50;
+  @apply md:border md:border-blue-800 border-opacity-30 rounded-[20px] md:border-opacity-100;
 }

@@ -46,17 +46,17 @@ export default function Profile(): JSX.Element {
   if (loading) return <Spinner />;
 
   return (
-    <section className="md:h-screen w-screen mx-auto p-3 sm:flex sm:justify-center sm:items-center md:flex-col md:p-0">
-      <section className="relative container h-screen w-full mx-auto max-w-sm sm:max-w-md border border-blue-700 px-1  border-opacity-10 rounded-[25px] md:overflow-hidden md:border-opacity-50 md:flex md:mt-0 md:h-4/5 lg:h-5/6 xl:h-5/6  md:max-w-3xl lg:max-w-4xl  bg-[#010101] bg-opacity-0  md:bg-opacity-10 ">
+    <section className="h-full w-full sm:flex sm:justify-center sm:items-center md:flex-col md:p-0">
+      <section className="relative container h-screen w-full mx-auto max-w-sm sm:max-w-md profile-border border-opacity-10 md:overflow-hidden  md:flex md:mt-0 md:h-3/4 lg:h-5/6 xl:h-5/6 md:max-w-3xl lg:max-w-4xl bg-[#010101] bg-opacity-0  md:bg-opacity-30 ">
         {/* LEFT */}
-        <div className="hidden md:flex flex-col w-10 lg:w-14 h-full justify-between pb-20 lg:pb-14 items-center pt-14">
+        <div className="hidden md:flex flex-col w-10 lg:w-16 h-full justify-between pb-20 lg:pb-14 items-center pt-10">
           <Link to="/">
             <Button>
               <BsArrowLeft className="text-xl text-yellow-500 bg-[#1D252E] rounded-full p-1 bg-zinc-600" />
             </Button>
           </Link>
 
-          <span className="text-white opacity-40 -rotate-90 md:mb-3">
+          <span className="text-white opacity-40 -rotate-90 md:mb-1 lg:mb-8">
             <span className="text-white text-[7px]">
               RonnieKiyegga@hotmail.com
             </span>
@@ -64,9 +64,9 @@ export default function Profile(): JSX.Element {
         </div>
 
         {/* MIDDLE */}
-        <div className="relative md:border md:border-x-neutral-600 md:px-0 md:border-opacity-35 md:border-y-0 w-full md:flex md:justify-between md:pt-12 md:space-x-0 md:w-[680px] lg:px-1 lg:w-full">
+        <div className="relative md:border md:border-x-neutral-600 md:px-2 md:border-opacity-35 md:border-y-0 w-full md:flex md:justify-between md:pt-8 lg:pt-9 md:space-x-0 md:w-[680px] lg:px-2 lg:w-full">
           {/* IMAGE */}
-          <div className="md:w-[370px] md:order-2 relative ">
+          <div className="relative md:w-[350px] md:order-2 lg:w-[370px]">
             <figure>
               <img
                 src={avatar_url}
@@ -110,7 +110,7 @@ export default function Profile(): JSX.Element {
           </div>
 
           {/* PROFILE DISPLAY */}
-          <div className="w-full -mt-7 opacity-90 sm:-bottom-28 md:order-1 md:w-[330px] md:h-[680px] md:flex md:flex-col justify-between md:p-1 md:mt-6 md:pr-2 lg:w-[400px] lg:h-[700px] lg:p-0 ">
+          <div className="w-full -mt-7 opacity-90 sm:-bottom-28 md:order-1 md:w-[310px] md:h-[600px] md:flex md:flex-col justify-between md:p-1 md:mt-6 md:pr-2 lg:w-[370px] lg:h-[650px] lg:p-0 ">
             <div className="flex space-x-3 items-center text-[9px] p-1 hidden md:flex md:justify-end ">
               <FaUser className="text-sky-800" />
               <h1
@@ -146,8 +146,8 @@ export default function Profile(): JSX.Element {
 
         {/* RIGHT */}
         <div
-          className="hidden  w-10 lg:w-14 h-full md:flex flex-col
-      justify-between items-center text-xs pt-16"
+          className="hidden w-10 lg:w-16 h-full md:flex flex-col
+      justify-between items-center text-xs pt-12"
         >
           <GithubLogo />
           <div className=" space-y-6">
