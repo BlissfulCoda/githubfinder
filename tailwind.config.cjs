@@ -15,7 +15,7 @@ module.exports = {
       },
 
       backgroundImage: (theme) => ({
-        "Earth-New": "url('/src/assets/Earth-New.gif')",
+        Earth: "url('/src/assets/Earth-New.gif')",
       }),
       fontFamily: {
         Lustria: ["Lustria", "serif"],

@@ -5,6 +5,12 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .profile-border {
-  @apply md:border md:border-blue-800 border-opacity-30 rounded-[20px] md:border-opacity-100;
+  @apply md:border md:border-blue-800 border-opacity-30 rounded-[20px] md:border-opacity-60;
 }

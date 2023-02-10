@@ -13,7 +13,7 @@ export default function User({ user }: UserProps): JSX.Element {
   return (
     <Link to={`/user/${login}`}>
       <section>
-        <div className="clip-path-myPolygon hover:border-4 hover:border-indigo-600 h-52 w-48 sm:w-68 sm:h-68 md:h-56 md:w-56 lg:w-68 relative hover:duration-500">
+        <div className="clip-path-myPolygon hover:border-4 hover:border-indigo-600 h-48 w-48 sm:w-68  md:h-56 md:w-56 lg:w-68 lg:h-60  relative hover:duration-500">
           <img
             src={avatar_url}
             alt="Profile"
